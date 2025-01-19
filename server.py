@@ -35,8 +35,9 @@ def submit_email(website_id):
             name_fe = data_from_fe['name']
             email_fe = data_from_fe['email']
             message_fe = data_from_fe['message']
+            number_fe = data_from_fe['number']
 
-            email.set_content(f"Name: {name_fe}\nEmail: {email_fe}\nMessage: {message_fe}") #content of the email
+            email.set_content(f"Name: {name_fe}\nEmail: {email_fe}\nMessage: {message_fe} \nNumber: {number_fe}") #content of the email
 
             with smtplib.SMTP(host="smtp.gmail.com",port=587) as smtp: #usual stuff for sending over Gmail
                 smtp.ehlo() #tells gmail this is a server
