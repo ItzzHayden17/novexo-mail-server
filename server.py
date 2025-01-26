@@ -39,10 +39,10 @@ def submit_email(website_id):
 
             email.set_content(f"Name: {name_fe}\nEmail: {email_fe}\nMessage: {message_fe} \nNumber: {number_fe}") #content of the email
 
-            with smtplib.SMTP(host="smtp.gmail.com",port=587) as smtp: #usual stuff for sending over Gmail
+            with smtplib.SMTP(host="mail21.domains.co.za",port=465) as smtp: #usual stuff for sending over Gmail
                 smtp.ehlo() #tells gmail this is a server
                 smtp.starttls() #starts encryption
-                smtp.login("sony.anray743@gmail.com","nyrn pfuh reqz yomc")
+                smtp.login("no-reply@novexo.co.za","eA@0vmw%K&SP")
                 smtp.send_message(email) 
                 return redirect(website['website_url']) #redirects to the website
         
