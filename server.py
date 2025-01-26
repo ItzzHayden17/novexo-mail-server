@@ -27,7 +27,7 @@ def submit_email(website_id):
         if website['id'] == website_id:
 
             email = EmailMessage() #creating an email object
-            email['from'] = website['website_name'] #from the website name
+            email['from'] = "no-reply@novexo.co.za" #from the website name
             email['to'] = website['go_to_email_address'] #to the email address
             email['subject'] = f"You have a new message from your website {website['website_name']}" #subject of the email
 
