@@ -40,13 +40,12 @@ def submit_email(website_id):
             email.set_content(f"Name: {name_fe}\nEmail: {email_fe}\nMessage: {message_fe} \nNumber: {number_fe}") #content of the email
 
             try:
-                with smtplib.SMTP_SSL(host="mail21.domains.co.za",port=465) as smtp: #usual stuff for sending over Gmail
-                    smtp.login("no-reply@novexo.co.za","eA@0vmw%K&SP")
-                    smtp.send_message(email) 
-                    print("Email sent")
-                    return redirect(website['website_url']) #redirects to the website  
+                with smtplib.SMTP_SSL(host="mail21.domains.co.za", port=465) as smtp:  # Use SMTP_SSL for port 465
+                    smtp.login("no-reply@novexo.co.za", "eA@0vmw%K&SP")  # Login with your credentials
+                    smtp.send_message(email)  # Send the email
+                print("Email sent successfully!")
             except Exception as e:
-                print(e)
+                print(f"Failed to send email: {e}")
         
     return jsonify({"error": f"Website with ID {website_id} not found"}), 404
 
