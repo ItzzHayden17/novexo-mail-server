@@ -43,11 +43,11 @@ def submit_email(website_id):
                 with smtplib.SMTP_SSL(host="mail21.domains.co.za", port=465) as smtp:  # Use SMTP_SSL for port 465
                     smtp.login("no-reply@novexo.co.za", "eA@0vmw%K&SP")  # Login with your credentials
                     smtp.send_message(email)  # Send the email
+                    return redirect(website["website_url"])
                 print("Email sent successfully!")
             except Exception as e:
                 print(f"Failed to send email: {e}")
         
-    return jsonify({"error": f"Website with ID {website_id} not found"}), 404
 
 
 if __name__ == '__main__':
